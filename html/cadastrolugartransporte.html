@@ -1,0 +1,112 @@
+<section id="cadastro">
+
+	<div class="lista container">
+
+		<form class="form-horizontal" action="inc/empresa.php" method="post">
+
+				<div class="corpo-onibus">
+
+					<div class="row">
+
+						<div class="col-sm-12">
+							<h3 class="text-center">Distribuição dos Lugares no Transporte</h3>
+						</div>
+
+						<div class="col-sm-3">
+							<p>Destino:</p>
+						</div>
+
+						<div class="col-sm-9">
+							<p>Caldas Novas</p>
+						</div>
+
+						<div class="col-sm-3">
+							<p>Ida:</p>
+						</div>
+
+						<div class="col-sm-3">
+							<p>03/12/2016</p>
+						</div>
+
+						<div class="col-sm-3">
+							<p>Retorno:</p>
+						</div>
+
+						<div class="col-sm-3">
+							<p>03/12/2016</p>
+						</div>
+
+						<div class="col-sm-4 lugar-bus">
+							<p><b>Motorista</b></p>
+						</div>
+
+						<div class="col-sm-4 lugar-bus">
+							<p>-</p>
+						</div>
+
+						<div class="col-sm-4 lugar-bus">
+							<p><b>Porta</b></p>
+						</div>
+
+						<?php 
+
+							$quant_lugar = 48 + 1;
+							$i = 0;
+
+							while ($i < $quant_lugar) {									 	 
+								
+									++$i;
+
+									if ($i < $quant_lugar) {
+										echo '<div class="col-sm-2 lugar-bus">';
+										echo '<p> Nº ' .$i .'</p>';
+										echo '<p><a href="inc/reservarlugar.php?idviagem= &idtransporte= &idlugar=' .$i .'"> Reservar </a> </p>';
+										echo '</div>';
+									}
+
+									++$i;
+									if ($i < $quant_lugar) {
+										echo '<div class="col-sm-2 lugar-bus">';
+										echo '<p> Nº ' .$i .'</p>';
+										echo '<p><a href="inc/reservarlugar.php?idviagem= &idtransporte= &idlugar=' .$i .'"> Reservar </a> </p>';
+										echo '</div>';
+									}
+
+									
+									if ($i < $quant_lugar) {
+										echo '<div class="col-sm-4 lugar-bus">';
+										echo '<p>|</p>';
+										echo '<p>|</p>';
+										echo '</div>';
+									}
+
+									++$i;
+									if ($i < $quant_lugar) {
+										echo '<div class="col-sm-2 lugar-bus">';
+										echo '<p> Nº ' .$i .'</p>';
+										echo '<p><a href="inc/reservarlugar.php?idviagem= &idtransporte= &idlugar=' .$i .'"> Reservar </a> </p>';
+										echo '</div>';
+									}
+
+									++$i;
+									if ($i < $quant_lugar) {
+										echo '<div class="col-sm-2 lugar-bus">';
+										echo '<p> Nº ' .$i .'</p>';
+										echo '<p><a href="inc/reservarlugar.php?idviagem= &idtransporte= &idlugar=' .$i .'"> Reservar </a> </p>';
+										echo '</div>';					
+									}
+							}
+
+							
+
+						 ?>
+					</div>
+				</div>
+
+				<input type="hidden" name="operacao" value="incluir">
+				<div class="form-group"><button class="btn btn-default">Salvar</button></div>
+		</form>
+
+	</div>
+
+ </section>

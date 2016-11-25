@@ -1,0 +1,71 @@
+<section id="cadastro">
+
+	<div class="lista container">
+
+		<h3 class="text-center title_pagina">Cadastro de Viagens</h3>
+
+		<form class="form-horizontal" action="inc/viagem.php" method="post">
+
+				<?php 
+					require_once("inc/viagem.php");
+					$proxID = recuperarProxID();
+				 ?>
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-2">
+							<label class="control-label">Código:</label> 
+							<input class="form-control"  id="disabledTextInput" name="id_viagem" required size=5 maxlength=20 disabled value=<?php echo $proxID; ?> >
+						</div>
+						
+						<div class="col-sm-10">
+							<label class="control-label">Descrição:</label> 
+							<input class="form-control" name="nome_viagem" required size=60 maxlength=60 autofocus data-toggle="tooltip" title="Informe um título para a viagem">
+						</div>
+
+						<div class="col-sm-6">
+							<label class="control-label">Data da Ida:</label> 
+							<input class="form-control" name="data_ida_viagem" required type="date" data-toggle="tooltip" title="Informe a Data da Ida (dd/mm/aaaa)">
+						</div>
+
+						<div class="col-sm-6">
+							<label class="control-label">Data do Retorno:</label> 
+							<input class="form-control" name="data_retorno_viagem" required type="date" data-toggle="tooltip" title="Informe a Data do Retorno (dd/mm/aaaa)">
+						</div>
+
+						<div class="col-sm-6">
+							<label class="control-label">Valor do Pacote Adulto:</label> 
+							<input class="form-control" name="valor_pacote_adulto" type="tel"  data-toggle="tooltip" title="Informe o valor do pacote Adulto em Reais">
+						</div>
+
+						<div class="col-sm-6">
+							<label class="control-label">Valor do Pacote Infantil:</label> 
+							<input class="form-control" name="valor_pacote_infantil" type="tel"  data-toggle="tooltip" title="Informe o valor do pacote Infantil em Reais (de 6 a 12 anos)">
+						</div>
+
+						<div class="col-sm-12">
+							<label class="control-label">Informações da Viagem:</label> 
+							<textarea class="form-control" name="descricao_viagem" rows=5 data-toggle="tooltip" title="Inclua as informações da viagem"></textarea>
+						</div>
+
+						<div class="col-sm-12">
+							<label class="control-label">Anexar Imagem:</label> 
+						</div>
+						<div class="col-sm-10">						
+							<input class="form-control" name="img_url" data-toggle="tooltip" title="Selecione uma imagem para enviar por email para os clientes cadastrados">
+						</div>
+						<div class="col-sm-2">
+							<a href=""><span class="glyphicon glyphicon-upload"></a>
+						</div>
+				</div>
+
+
+				
+				
+				<input type="hidden" name="operacao" value="incluir">
+				<div class="form-group"><button class="btn btn-default">Salvar</button></div>
+		</form>
+
+	</div>
+
+ </section>

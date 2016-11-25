@@ -1,0 +1,33 @@
+<section id="cadastro">
+
+	<div class="lista container">
+
+		<h3 class="text-center title_pagina">Envie-nos um email</h3>
+
+		<form class="form-horizontal" action="inc/mail_send.php" method="post">
+
+				<div class="form-group">
+					<label class="control-label">Nome:</label> 
+					<input class="form-control" name="nome_email" required maxlength=60>
+
+					<label class="control-label">Celular:</label> 
+					<input class="form-control" type="tel" name="celular_email" required maxlength=20 pattern="^\(d{2})-\d{5}-\d{4}$">
+				
+					<label class="control-label">Seu Email:</label> 
+					<input class="form-control" type="email" name="contato_email" required maxlength=60>
+
+					<label class="control-label">Assunto:</label> 
+					<input class="form-control" name="assunto_email" required maxlength=60>
+
+					<label class="control-label">Mensagem:</label> 
+					<textarea class="form-control" name="mensagem" rows=4" required></textarea>
+
+				</div>
+
+				<input type="hidden" name="email" value="enviar">
+				<div class="form-group"><button class="btn btn-default">Enviar</button></div>
+		</form>
+
+	</div>
+
+</section>

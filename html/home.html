@@ -1,0 +1,75 @@
+<section>
+
+	<div class="container">
+
+		<div id="proximasviagens">
+
+			<h3>Próximas Viagens</h3>
+
+			<table class="table table-striped table-responsive table-hover">
+
+				<thead>
+					<tr>
+						<th>Data de Ida</th>
+						<th>Data de Retorno</th>
+						<th>Destino</th>
+						<th>O que fazer?</th>						
+					</tr>
+				</thead>
+				<tbody>
+					<?php 
+
+						require_once("inc/viagem.php");
+
+						$resultado = recuperarViagensFuturas();
+
+						foreach ($resultado as $row) {
+							
+							echo '<tr>';
+
+								//Data de ida
+								$date = date_create($row["data_ida_viagem"]);
+								echo '<td> ' . date_format($date, "d/m/y") . '</td>';
+
+								//Data de Retorno
+								$date = date_create($row["data_retorno_viagem"]);
+								echo '<td> ' . date_format($date, "d/m/y") . '</td>';
+
+								//Destino
+								echo '<td> ' .$row["nome_viagem"] . '</td>';
+
+								//Mais Informações
+								echo '<td>Hotel | Transporte | Passageiros</td>';
+
+							echo '</tr>';
+						}
+
+					?>
+
+				</tbody>
+		
+			</table>
+
+		</div>
+
+		<div id="proximosniver">
+
+			<h3>Próximos Aniversariantes</h3>
+
+
+		</div>
+
+		<div id="proximospagamentos">
+
+			<h3>Próximos Pagamentos</h3>
+
+
+		</div>
+
+	</div>
+
+
+
+
+
+</section>

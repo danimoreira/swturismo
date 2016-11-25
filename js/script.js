@@ -1,0 +1,3 @@
+function abriModal() {
+    $("#loginmodal").modal();
+}

@@ -1,0 +1,72 @@
+<section id="cadastro">
+
+	<div class="lista container">
+
+		<h3 class="text-center title_pagina">Configuração de Banner</h3>
+
+		<form class="form-horizontal" action="inc/banner.php" method="post">
+
+				<?php 
+					require_once("inc/banner.php");
+					$proxID = recuperarProxIDBanner();
+				 ?>
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-2">
+							<label class="control-label">Código:</label> 
+							<input class="form-control"  id="disabledTextInput" name="id_banner" required size=5 maxlength=20 disabled value=<?php echo $proxID; ?> >
+						</div>
+						<div class="col-sm-10">
+							<label class="control-label">Título:</label> 
+							<input class="form-control" name="titulo_banner" required maxlength=40 autofocus data-toggle="tooltip" title="Informe o Título que deverá aparecer no Banner">
+						</div>
+					
+						<div class="col-sm-12">		
+							<label class="control-label">Slogan:</label> 
+							<input class="form-control" name="slogan_banner" required maxlength=150>
+						</div>
+
+						<div class="col-sm-12">		
+							<label class="control-label">Link:</label> 
+							<input class="form-control" name="link_banner" required maxlength=150>
+						</div>
+
+						<div class="col-sm-8">			
+							<label class="control-label">Cor do Texto:</label> 
+							<input type="color" class="form-control" name="colortext" required">
+						</div>
+					
+						<div class="col-sm-8">			
+							<label class="control-label">Data Expiração:</label> 
+							<input class="form-control" name="data_expiracao" required type="date" data-toggle="tooltip" title="Informe a Data de Expiração do Banner (dd/mm/aaaa)">
+						</div>
+
+						<div class="col-sm-4">	
+							<label class="control-label">Ativo:</label> 
+							<input class="form-control" type="checkbox" name="ativo" checked>
+						</div>
+						
+						<div class="col-sm-12">
+							<label class="control-label">Anexar Imagem:</label> 
+						</div>
+						<div class="col-sm-10">
+							<input class="form-control" name="img_url" data-toggle="tooltip" title="Selecione uma imagem para enviar por email para os clientes cadastrados">
+						</div>
+						<div class="col-sm-1">
+							<a href=""><span class="glyphicon glyphicon-folder-open"></a>
+						</div>
+						<div class="col-sm-1">
+							<a href=""><span class="glyphicon glyphicon-upload	"></a>
+						</div>
+					
+					</div>
+				</div>
+				
+				<input type="hidden" name="operacao" value="incluir">
+				<div class="form-group"><button class="btn btn-default">Salvar</button></div>
+		</form>
+
+	</div>
+
+ </section>

@@ -1,0 +1,591 @@
+@font-face {
+	font-family: 'Open-Sans';
+	src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+.title_pagina {
+  color: #F4B350;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+/*----------------------------- Header ------------------------*/
+
+header {
+	font-family: 'Open-Sans';
+	width: 100%;
+	height: 50px;
+	background-color: #FFF;
+}
+
+#logo {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 40%;
+  height: 100%; 
+}
+
+#logo a {
+  color: #2574A9;  
+}
+
+.slogan {
+  color: #E87E04;
+  font-size: 10px;  
+  position: absolute;
+  top: 30px;
+  margin-left: 12px;
+}
+
+.empresa {
+  font-size: 22px;
+}
+
+#entrar {
+  cursor: pointer;
+}
+
+.modal-header, h4, .close {
+  background-color: #65C6BB;
+  color:white !important;
+  text-align: center;
+  font-size: 30px;
+}
+
+.close {
+  display: block;
+}
+
+.modal-footer {
+  background-color: #65C6BB;
+}
+
+/*----------------------------- Footer ------------------------*/
+
+footer {
+	font-family: 'Open-Sans';
+	position: relative;	
+	height: 100px;
+	color: #FFF;	
+	text-align: center;
+  border-top: 2px solid white; 
+}
+
+footer #rodape {
+  background-color: #65C6BB;
+}
+
+footer .row-empresa {
+	margin-top: 10px;
+	text-align: left;
+	font-size: 10px;
+	width: 220px;
+}
+
+footer a {
+	font-size: 10px;
+	color: #FFF;
+}
+
+footer .footer-menu {
+	list-style: none;
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+footer .footer-social {
+	margin-left: 200px;
+	margin-top: 40px;
+}
+
+footer .footer-social i {
+	font-size: 20px;
+	margin-left: 18px;
+}
+	
+/*----------------------------- Banner ------------------------*/
+#myCarousel img {
+	height: 380px;
+	width: 100%;
+}
+
+.linkbanner {
+  color: #1F3A93;
+}
+
+#slider {
+	position: relative;
+	width: 100%;
+	height: 100%;
+  padding-bottom: 2px;
+}
+
+.modal-backdrop {
+  z-index: 0;
+}
+
+.title-valor {
+  color: #2574A9;
+  margin-bottom: 50px;
+}
+
+.titlepag {
+  font-size: 36px;
+  color: #2574A9;
+}
+
+.carousel-inner h3 {
+  color: #1E824C;
+}
+
+.carousel-inner p {
+  color: #1E824C;
+}
+
+/*----------------------------- Index - Valores ------------------------*/
+
+#valores {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+  background-color: #3498db;
+  color: #ecf0f1;
+  padding-bottom: 2px;
+}
+
+#valores a {
+  color: #ecf0f1;
+}
+
+#valores .icon-valor {
+	font-size: 64px;
+}
+
+#valores .text-valor {
+	font-size: 24px;
+}
+
+/*----------------------------- Index - Agenda ------------------------*/
+#agenda {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center; 
+  background-color: #03A678;
+  border-top: 2px solid white; 
+}
+
+#agenda a{
+  color: #ECECEC;
+}
+
+#agenda img {
+	position: relative;
+	width: 280px;
+	height: 200px;
+}
+
+#agenda .saibamais {
+	text-align: right;
+}
+
+#agenda .title_viagem{
+  color: #ECECEC;
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+#agenda img {
+  border: 1px solid white;
+  object-fit: cover;
+}
+
+#agenda .data_viagem {
+  color: #ECECEC;
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+/*----------------------------- Painel de Controle - Cadastro ------------------------*/
+
+#cadastro {
+	width: 80%;
+  margin-left: 100px;
+	position: relative;
+}
+
+#cadastro input {
+	background-color: #FFF;
+	color: #2574A9;
+}
+
+#cadastro input:focus {
+	background-color: #ecf0f1;
+}
+
+#cadastro form {
+	margin-right: 50px;
+}
+
+#cadastro span {
+  font-size: 16px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+#cadastro .lista {
+  position: relative;
+  margin-left: 100px;
+  width: 80%;
+}
+
+/*----------------------------- Home - Menu Administrativo ------------------------*/
+
+#proximasviagens {
+  position: relative;
+  margin: 0 auto;
+  width: 70%;
+}
+
+#proximosniver {
+  position: relative;
+  margin: 0 auto;
+  width: 70%;
+}
+
+#proximospagamentos {
+  position: relative;
+  margin: 0 auto;
+  width: 70%;
+}
+
+/*----------------------------- Distribuição de Lugares no Ônibus ------------------------*/
+.corpo-onibus {
+  position: relative;
+  width: 100%;
+}
+
+.corpo-onibus .lugar-bus {
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border: 1px solid;
+}
+
+/*----------------------------- História ------------------------*/
+#historia {
+  color: #2574A9;
+  text-align: justify;
+}
+
+#historia img{
+  float: right;
+  margin:0 20px 10px 20px;
+  max-width: 300px;
+  min-height: 250px;
+  border: 3px solid #68C3A3;
+  object-fit: cover;
+}
+
+#historia .img02 {
+  float: left;
+  margin: 10px 20px 10px 0;
+  padding: 0;
+  max-width: 300px;
+  min-height: 200px;
+  border: 3px solid #68C3A3;
+  object-fit: fill;
+}
+
+#historia .title {
+  color: #7f8c8d;
+}
+
+#historia h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+#historia .texto_orcamento {
+  text-align: center;
+}
+
+/*----------------------------- Agenda Viagem ------------------------*/
+
+#agendaviagens .dia_agenda {
+  width: 70px;
+  height: 70px;
+  background-color: #e74c3c;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 72px;
+  color: #ecf0f1;
+  border: 2px solid ;
+}
+
+#agendaviagens .mes_agenda {
+  width: 100px;
+  height: 20px;
+  background-color: #2980b9;
+  text-align: center;
+  font-size: 18px;
+  color: #ecf0f1;
+  border: 2px solid;
+}
+
+#agendaviagens .ano_agenda {
+  width: 100px;
+  height: 20px;
+  background-color: #F39C12;
+  text-align: center;
+  font-size: 18px;
+  color: #ecf0f1;
+  border: 2px solid;
+}
+
+#agendaviagens .title_agenda {
+  background-color: #c0392b;
+  color: #ecf0f1;
+  border: 2px solid #ecf0f1;
+}
+
+#agendaviagens .col-sm-3 {
+  padding: 0 auto;
+}
+
+#agendaviagens .title_agenda th {
+  text-align: center; 
+}
+
+#agendaviagens .img_agenda {
+  width: 300px;  
+}
+
+#agendaviagens td {
+  padding: 0;
+  border: 2px solid #ecf0f1;
+}
+
+#agendaviagens th {
+  border: 2px solid #ecf0f1;
+}
+
+#agendaviagens .img_agenda img {
+  width: 100%;
+  min-height: 170px;
+}
+
+#agendaviagens .destino_agenda {
+  vertical-align: middle;
+  background-color: #2980b9;
+  color: #ecf0f1;
+  padding-left: 8px;
+  text-transform: uppercase;
+}
+
+#agendaviagens .mais_info {
+  text-align: center;
+  vertical-align: middle;
+  background-color: #2980b9;  
+}
+
+#agendaviagens .mais_info a {
+  color: #f39c12;
+}
+
+#agendaviagens {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+}
+
+
+/*----------------------------- Exibe Viagem ------------------------*/
+#exibe-viagem .title_pagina {
+  color: #2C3E50;
+  font-size: 24px;
+}
+
+#exibe-viagem .texto_orcamento{
+  text-align: center;
+  background-color: #95a5a6;
+  border-top: 1px solid white;
+}
+
+#exibe-viagem img {
+  height: 100%;
+  width: 100%;
+  min-height: 279px;
+}
+
+#exibe-viagem .texto_orcamento a {
+  font-size: 18px;
+  color: #ecf0f1;
+}
+
+#exibe-viagem .title-detalhe {
+  text-align: right;
+  font-weight: bold;
+  width: 25%;
+  color: #2ecc71;
+}
+
+#exibe-viagem .valor-detalhe{
+  color: #2980b9;
+  font-size: 16px;
+}
+
+#exibe-viagem .col-sm-7{
+  height: 100%;
+}
+
+#exibe-viagem .titulo-viagem{
+  background-color: #3498db;
+  color: #ecf0f1;
+  border-bottom: 1px solid white;
+  text-align: center;
+  height: 40px;
+}
+
+#exibe-viagem .titulo-viagem h2{
+  padding-top: 5px;
+}
+
+#exibe-viagem .voltar {
+  color: #2980b9;
+  padding-top: 10px; 
+  font-size: 16px;
+}
+
+#exibe-viagem .voltar a{
+  color: #2980b9;
+}
+
+/* ************************* MENU ADMINISTRATIVO ************************* */
+
+body,html{
+    height: 100%;
+  }
+
+  nav.sidebar, .main{
+    -webkit-transition: margin 200ms ease-out;
+      -moz-transition: margin 200ms ease-out;
+      -o-transition: margin 200ms ease-out;
+      transition: margin 200ms ease-out;
+  }
+
+  .main{
+    padding: 10px 10px 0 10px;
+  }
+
+ @media (min-width: 765px) {
+
+    .main{
+      position: absolute;
+      width: calc(100% - 40px); 
+      margin-left: 40px;
+      float: right;
+    }
+
+    nav.sidebar:hover + .main{
+      margin-left: 200px;
+    }
+
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+      margin-left: 0px;
+    }
+
+    nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+      text-align: center;
+      width: 100%;
+      margin-left: 0px;
+    }
+    
+    nav.sidebar a{
+      padding-right: 13px;
+    }
+
+    nav.sidebar .navbar-nav > li:first-child{
+      border-top: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav > li{
+      border-bottom: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: transparent;
+      border: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+      padding: 0 0px 0 0px;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+      color: #777;
+    }
+
+    nav.sidebar{
+      width: 200px;
+      height: 100%;
+      margin-left: -160px;
+      float: left;
+      margin-bottom: 0px;
+    }
+
+    nav.sidebar li {
+      width: 100%;
+    }
+
+    nav.sidebar:hover{
+      margin-left: 0px;
+    }
+
+    .forAnimate{
+      opacity: 0;
+    }
+  }
+   
+  @media (min-width: 1330px) {
+
+    .main{
+      width: calc(100% - 200px);
+      margin-left: 200px;
+    }
+
+    nav.sidebar{
+      margin-left: 0px;
+      float: left;
+    }
+
+    nav.sidebar .forAnimate{
+      opacity: 1;
+    }
+  }
+
+  nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: #CCC;
+    background-color: transparent;
+  }
+
+  nav:hover .forAnimate{
+    opacity: 1;
+  }
+  section{
+    padding-left: 15px;
+  }
+  
+/* ************************* MENU ADMINISTRATIVO ************************* */

@@ -1,0 +1,77 @@
+<section id="cadastro">
+
+	<div class="lista container">
+
+		<h3 class="text-center title_pagina">Cadastro de Hotel</h3>
+
+		<form class="form-horizontal" action="inc/hotel.php" method="post">
+
+				<?php 
+					require_once("inc/hotel.php");
+					$proxID = recuperarProxID();
+				 ?>
+
+				<div class="form-group">
+
+					<div class="row">
+						<div class="col-sm-2">
+							<label class="control-label">Código:</label> 
+							<input class="form-control"  id="disabledTextInput" name="id_hotel" required size=5 maxlength=20 disabled value=<?php echo $proxID; ?> >
+						</div>
+
+						<div class="col-sm-10">
+							<label class="control-label">Nome:</label> 
+							<input class="form-control" name="nome_hotel" required size=40 maxlength=40 autofocus data-toggle="tooltip" title="Informe o nome do Hotel">
+						</div>
+
+						<div class="col-sm-3">
+							<label class="control-label">CEP:</label> 
+							<input class="form-control" name="cep_hotel" required size=9>
+						</div>
+
+						<div class="col-sm-9">
+							<label class="control-label">Endereço:</label> 
+							<input class="form-control" name="endereco_hotel" required size=80 maxlength=80>
+						</div>
+						
+						<div class="col-sm-5">
+							<label class="control-label">Bairro:</label> 
+							<input class="form-control" name="bairro_hotel" size=40 required maxlength=40>
+						</div>
+						<div class="col-sm-5">
+							<label class="control-label">Cidade:</label> 
+							<input class="form-control" name="cidade_hotel" size=50 required maxlength=50>
+						</div>
+						<div class="col-sm-2">
+							<label class="control-label">Estado:</label> 
+							<input class="form-control" name="uf_hotel" size=2 required list="uf">
+														<datalist id="uf">
+														    <option value="MG">
+														    <option value="SP">
+														    <option value="RJ">
+														    <option value="ES">
+														</datalist>
+						</div>
+						<div class="col-sm-7">
+							<label>Contato:</label> 
+							<input class="form-control" name="contato_hotel" size="30" maxlength=30 data-toggle="tooltip" title="Informe o nome do contato principal do Hotel">
+						</div>
+						<div class="col-sm-5">
+							<label class="control-label">Telefone:</label> 
+							<input class="form-control" name="tel_hotel" type="tel" maxlength=15 data-toggle="tooltip" title="Informe o telefone do Hotel - formato: (99) 9999-9999">
+						</div>
+						<div class="col-sm-12">
+							<label class="control-label">Site:</label> 
+							<input class="form-control" name="site_hotel" type="text" required maxlength=80 data-toggle="tooltip" title="Informe o site do Hotel">
+						</div>
+					</div>		
+					
+				</div>
+				
+				<input type="hidden" name="operacao" value="incluir">
+				<div class="form-group"><button class="btn btn-default">Salvar</button></div>
+		</form>
+
+	</div>
+	
+ </section>

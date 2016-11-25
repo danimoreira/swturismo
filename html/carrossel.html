@@ -1,0 +1,55 @@
+<div id="slider">
+			
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+		<ol class="carousel-indicators">
+		    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		    <li data-target="#myCarousel" data-slide-to="1"></li>
+		    <li data-target="#myCarousel" data-slide-to="2"></li>
+		    <li data-target="#myCarousel" data-slide-to="3"></li>
+		</ol>
+			
+			<div class="carousel-inner" role="listbox">
+
+				<?php 
+
+					require_once("inc/banner.php");
+
+					$resultado = RecuperarBanner();
+
+					if ( is_int($resultado) ) {
+
+					} else {
+						$index = 1;
+
+						foreach ($resultado as $row) {
+
+							if ($index == 1) {
+								echo '<div class="item active">';
+							}
+							else {
+								echo '<div class="item">';
+							}						
+							echo '<a href="'. $row["link_banner"] . '"><img src="img/' . $row["img_url"] .'" alt="' . $row["titulo_banner"] .'">';
+							echo '<div class="carousel-caption">';
+							echo '<h3>' . $row["titulo_banner"] .'</h3>';
+							echo '<p>' . $row["slogan_banner"] .'</p></a>';
+							echo '</div>';
+							echo '</div>';
+
+							$index ++;
+						}
+					}
+
+					
+
+				?>
+
+			</div>
+
+			</div>
+
+	</div>
+
+
+</div>

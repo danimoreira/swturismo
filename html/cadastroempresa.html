@@ -1,0 +1,92 @@
+<section id="cadastro" class="container">
+
+	<h3 class="text-center title_pagina">Dados Gerais</h3>
+
+	<form class="form-horizontal" action="inc/empresa.php" method="post">
+
+			<?php 
+				require_once("inc/empresa.php");
+				$id_empresa = recuperarID();
+				if ($id_empresa==0) {
+					$id_empresa = 1;
+				}
+			 ?>
+
+			<div class="form-group">
+				<div class="row">
+					<div class="col-sm-2">
+						<label class="control-label">Código:</label> 
+						<input class="form-control"  id="disabledTextInput" name="id_empresa" required size=5 maxlength=20 disabled value=<?php echo $id_empresa; ?> >
+					</div>
+					
+					<div class="col-sm-10">
+						<label class="control-label">Razão Social:</label> 
+						<input class="form-control" name="nome_empresa" required size=40 maxlength=40 autofocus data-toggle="tooltip" title="Informe a Razão Social para a empresa">
+					</div>
+			
+					<div class="col-sm-4">
+						<label class="control-label">Data Fundação:</label> 
+						<input class="form-control" name="data_fundacao_empresa" required type="date" data-toggle="tooltip" title="Informe a Data de Fundação (dd/mm/aaaa)">
+					</div>
+
+					<div class="col-sm-4">
+						<label class="control-label">Telefone Fixo:</label> 
+						<input class="form-control" name="tel_fixo_empresa" type="tel" maxlength=15 data-toggle="tooltip" title="Telefone Fixo - formato: (99) 9999-9999">
+					</div>
+
+					<div class="col-sm-4">
+						<label class="control-label">Celular:</label> 
+						<input class="form-control" name="tel_celular_empresa" type="tel" required maxlength=15 data-toggle="tooltip" title="Celular - formato: (99) 9999-9999">
+					</div>
+
+					<div class="col-sm-3">				
+						<label class="control-label">CEP:</label> 
+						<input class="form-control" name="cep_empresa" required size=9>
+					</div>
+
+					<div class="col-sm-9">
+						<label class="control-label">Endereço:</label> 
+						<input class="form-control" name="endereco_empresa" required size=80 maxlength=80>
+					</div>
+
+					<div class="col-sm-5">
+						<label class="control-label">Bairro:</label> 
+						<input class="form-control" name="bairro_empresa" size=40 required maxlength=40>
+					</div>
+					<div class="col-sm-5">
+						<label class="control-label">Cidade:</label> 
+						<input class="form-control" name="cidade_empresa" size=50 required maxlength=50>
+					</div>
+					<div class="col-sm-2">
+						<label class="control-label">Estado:</label> 
+						<input class="form-control" name="uf_empresa" size=2 required list="uf">
+													<datalist id="uf">
+													    <option value="MG">
+													    <option value="SP">
+													    <option value="RJ">
+													    <option value="ES">
+													</datalist>
+					</div>
+				
+					<div class="col-sm-4">
+						<label>CNPJ:</label> 
+						<input class="form-control" name="cnpj_empresa" size=11data-toggle="tooltip" title="CNPJ - formato: 99.999.999/9999-99">
+					</div>
+				
+					<div class="col-sm-8">
+						<label>E-mail:</label> 
+						<input class="form-control text-lowercase" name="email_empresa" type="email" size=50 data-toggle="tooltip" title="Informe o email - formato: seuemail@empresa.com.br">
+					</div>
+
+					<div class="col-sm-12">
+						<label>Site:</label> 
+						<input class="form-control" name="site_empresa" size="60">
+					</div>
+				</div>
+			</div>	
+			
+			<input type="hidden" name="operacao" value="incluir">
+			<div class="form-group"><button class="btn btn-default">Salvar</button></div>
+	</form>
+
+ </section>

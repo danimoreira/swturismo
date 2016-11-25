@@ -1,0 +1,238 @@
+<section id="cadastro">
+
+	<div class="lista container">
+
+		<h3 class="text-center title_pagina">Cadastro de Turistas</h3>
+
+		<form class="form-horizontal" action="inc/turista.php" method="post">
+
+				<?php 
+					require_once("inc/turista.php");
+
+					if (isset($_GET["id"])) {
+						$resultado = recuperarTurista($_GET["id"]);
+						$novo = false;
+						$row = mysqli_fetch_assoc($resultado);
+					} else {
+						$proxID = recuperarProxID();
+						$novo = true;
+					}
+
+				 ?>
+
+				<div class="form-group">
+
+					<div class="row">
+						<div class="col-sm-2">
+							<label class="control-label">Código:</label>
+							<input class="form-control" id="disabledTextInput" name="id_passageiro" required size=5 maxlength=20 autofocus disabled value=
+							<?php 
+								if (!$novo) {
+									echo $_GET["id"];
+								} else {
+									echo $proxID;
+								}
+							 ?> >
+						</div>
+						<div class="col-sm-10">
+							<label class="control-label">Nome:</label> 
+							<input class="form-control" name="nome_passageiro" required size=60 maxlength=60 autofocus data-toggle="tooltip" title="Digite o nome do Turista" value=
+							<?php 
+								if (!$novo) {
+									echo '"' .$row["nome_passageiro"] .'"';
+								} else {
+									
+								}
+							 ?> >
+
+						</div>
+					
+						<div class="col-sm-4">	
+							<label class="control-label">Data Nascimento:</label> 
+							<input class="form-control" name="data_nasc_passageiro" required type="date" data-toggle="tooltip" title="Informe a Data de Nascimento (dd/mm/aaaa)" value=
+							<?php 
+								if (!$novo) {
+									echo '"' .$row["data_nasc_passageiro"] .'"';
+
+								} else {
+									
+								}
+							 ?> >
+						</div>
+
+						<div class="col-sm-4">			
+							<label class="control-label">Telefone Fixo:</label> 
+							<input class="form-control" name="tel_fixo_passageiro" type="tel" maxlength=15 data-toggle="tooltip" title="Telefone Fixo - formato: (99) 9999-9999"  value=
+							<?php 
+								if (!$novo) {
+									echo '"' .$row["tel_fixo_passageiro"] .'"';
+								} else {
+									
+								}
+							 ?> >
+						</div>
+
+						<div class="col-sm-4">			
+							<label class="control-label">Celular:</label> 
+							<input class="form-control" name="tel_cel_passageiro" type="tel" required maxlength=15 data-toggle="tooltip" title="Celular - formato: (99) 9999-9999" value=
+							<?php 
+								if (!$novo) {
+									echo '"' .$row["tel_cel_passageiro"] .'"';
+								} else {
+									
+								}
+							 ?> >
+						</div>
+
+						<div class="col-sm-3">			
+							<label class="control-label">CEP:</label> 
+							<input class="form-control" name="cep_passgeiro" required size=9 value=
+							<?php 
+								if (!$novo) {
+									echo '"' .$row["cep_passgeiro"] .'"';
+								} else {
+									
+								}
+							 ?> >
+						</div>
+						<div class="col-sm-9">	
+							<label class="control-label">Endereço:</label> 
+							<input class="form-control" name="endereco_passageiro" required size=80 maxlength=80 value=
+							<?php 
+								if (!$novo) {
+									echo '"' .$row["endereco_passageiro"] .'"';
+								} else {
+									
+								}
+							 ?> >
+						</div>
+						<div class="col-sm-5">
+							<label class="control-label">Bairro:</label> 
+							<input class="form-control" name="bairro_passageiro" size=40 required maxlength=40 value=
+							<?php 
+								if (!$novo) {
+									echo '"' .$row["bairro_passageiro"] .'"';
+								} else {
+									
+								}
+							 ?> >
+						</div>
+						<div class="col-sm-5">
+							<label class="control-label">Cidade:</label> 
+							<input class="form-control" name="cidade_passageiro" size=50 required maxlength=50 value=
+							<?php 
+								if (!$novo) {
+									echo '"' .$row["cidade_passageiro"] .'"';
+								} else {
+									
+								}
+							 ?> >
+						</div>
+						<div class="col-sm-2">
+							<label class="control-label">Estado:</label> 
+							<input class="form-control" name="uf_passageiro" size=2 required list="uf" value=
+							<?php 
+								if (!$novo) {
+									echo '"' .$row["uf_passageiro"] .'"';
+								} else {
+									
+								}
+							 ?> >
+														<datalist id="uf">
+														    <option value="MG">
+														    <option value="SP">
+														    <option value="RJ">
+														    <option value="ES">
+														</datalist>
+						</div>
+						<div class="col-sm-6">
+							<label>Doc. Identidade:</label> 
+							<input class="form-control" name="doc_rg_passageiro" required size=14 data-toggle="tooltip" title="Doc. Identidade - formato: XX 99.999.999" value=
+							<?php 
+								if (!$novo) {
+									echo '"' .$row["doc_rg_passageiro"] .'"';
+								} else {
+									
+								}
+							 ?> >
+						</div>
+						<div class="col-sm-6">
+							<label>CPF:</label> 
+							<input class="form-control" name="doc_cpf_passageiro" size=11data-toggle="tooltip" title="CPF - formato: 999.999.999-99" value=
+							<?php 
+								if (!$novo) {
+									echo '"' .$row["doc_cpf_passageiro"] .'"';
+
+								} else {
+									
+								}
+							 ?> >
+						</div>
+						<div class="col-sm-7">
+							<label>E-mail:</label> 
+							<input class="form-control text-lowercase" name="email_passageiro" type="email" size=50 data-toggle="tooltip" title="Informe o email - formato: seuemail@empresa.com.br" value=
+							<?php 
+								if (!$novo) {
+									echo '"' . $row["email_passageiro"] .'"';
+								} else {
+									
+								}
+							 ?> >
+						</div>
+						<div class="col-sm-5">
+							<label>Responsável Legal:</label> 
+							<input class="form-control" name="responsavel_passageiro" size="20" value=
+							<?php 
+								if (!$novo) {
+									echo $row["responsavel_passageiro"];
+								} else {
+									
+								}
+							 ?> >
+						</div>
+					</div>
+					<input type="hidden" name="tela_anterior" value=
+					<?php 
+						if (!$novo) {
+							if ($_GET["operacao"]=="excluir") {
+								echo 'listarpassageiros.php';
+							} else {
+								echo 'cadastropassageiro.php';
+							}
+							
+						} else {
+							echo 'listarpassageiros.php';
+						}
+					 ?> >
+
+					<input type="hidden" name="operacao" value=
+							<?php 
+								if (!$novo) {
+									if ($_GET["operacao"]=="excluir") {
+										echo 'excluir';
+									} else {
+										echo 'alterar';
+									}
+									
+								} else {
+									echo 'incluir';
+								}
+							 ?> >
+
+					<input type="hidden" name="id_passageiro" value=
+							<?php 
+								if (!$novo) {
+									echo $_GET["id"];
+								} else {
+									echo $proxID;
+								}
+							 ?> >
+					<div class="form-group"><button class="btn btn-default">Salvar</button></div>
+				</div>
+				
+				
+		</form>
+
+	</div>
+
+ </section>

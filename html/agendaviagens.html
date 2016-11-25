@@ -1,0 +1,76 @@
+<section id="corpo">
+
+	<div class="container">
+
+		<div id="agendaviagens">
+
+			<h3 class="text-center title_pagina">Agenda de Viagens</h3>
+
+			<table class="table table-responsive table-hover">
+
+				<thead class="title_agenda">
+					<tr>
+						<th>SAÍDA</th>
+						<th>RETORNO</th>						
+						<th colspan="2">DESTINO</th>
+						<th>MAIS INFORMAÇÕES</th>						
+					</tr>
+				</thead>
+				<tbody>
+
+
+					<?php 
+						require_once("inc/viagem.php");
+
+
+
+						date_default_timezone_set('America/Sao_Paulo');
+
+						$resultado = recuperarViagensFuturas();
+
+						foreach ($resultado as $row) {
+							
+								echo '<tr>';
+
+								//Data de ida
+								$dateIda = date_create($row["data_ida_viagem"]);
+								echo '<td class="dia_agenda"> ' . date_format($dateIda, "d") . '</td>';
+
+								//Data de Retorno
+								$dateRetorno = date_create($row["data_retorno_viagem"]);
+								echo '<td class="dia_agenda"> ' . date_format($dateRetorno, "d") . '</td>';
+
+								echo '<td rowspan="3" class="img_agenda"><img src="img/' .$row["img_url"] . '"></td>';
+
+								//Destino
+								echo '<td rowspan="3" class="destino_agenda"> ' .$row["nome_viagem"] . '</td>';
+
+								//Mais Informações
+								echo '<td rowspan="3" class="mais_info"><a href="exibeviagem.php?id=' .$row["id_viagem"] . '">Mais Informações</a></td>';
+
+								echo '</tr>';
+
+								echo '<tr>';
+									echo '<td class="mes_agenda"> ' . date_format($dateIda, "M") . '</td>';
+									echo '<td class="mes_agenda"> ' . date_format($dateRetorno, "M") . '</td>';
+								echo '</tr>';
+
+								echo '<tr>';
+									echo '<td class="ano_agenda"> ' . date_format($dateIda, "Y") . '</td>';
+									echo '<td class="ano_agenda"> ' . date_format($dateRetorno, "Y") . '</td>';
+								echo '</tr>';
+
+						}
+					?>
+
+				</tbody>
+		
+			</table>
+
+		</div>
+
+	</div>
+
+
+
+</section>

@@ -1,0 +1,65 @@
+<section id="cadastro">
+
+	<div class="lista container">
+
+		<h3 class="text-center title_pagina">Cadastro de Transporte</h3>
+
+		<form class="form-horizontal" action="inc/transporte.php" method="post">
+
+				<?php 
+					require_once("inc/transporte.php");
+					$proxID = recuperarProxID();
+				 ?>
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-2">
+							<label class="control-label">Código:</label> 
+							<input class="form-control"  id="disabledTextInput" name="id_transporte" required size=5 maxlength=20 disabled value=<?php echo $proxID; ?> >
+						</div>
+						
+						<div class="col-sm-10">
+							<label class="control-label">Descrição Transporte:</label> 
+							<input class="form-control" name="nome_transporte" required size=30 maxlength=30 autofocus data-toggle="tooltip" title="Informe o nome para o transporte">
+						</div>
+
+						<div class="col-sm-7">					
+							<label class="control-label">Modelo:</label> 
+							<input class="form-control" name="modelo_transporte" required size=30 maxlength=30 autofocus data-toggle="tooltip" title="Informe o Modelo do tranporte">
+						</div>
+						
+						<div class="col-sm-5">
+							<label class="control-label">Quantidade de Assentos:</label> 
+							<input class="form-control" name="qtd_lugares" required size=2 maxlength=2 autofocus data-toggle="tooltip" title="Informe a quantidade de assentos do transporte">
+						</div>
+
+						<div class="col-sm-12">
+							<label class="control-label">Características:</label> 
+							<textarea class="form-control" name="descricao_transporte" rows=5 data-toggle="tooltip" title="Informe as características do Transporte"></textarea>
+						</div>
+
+						<div class="col-sm-12">
+							<label class="control-label">Empresa:</label> 
+						</div>
+						<div class="col-sm-2">						
+							<input class="form-control" name="id_empresa" id="disabledTextInput" disabled>
+						</div>
+						<div class="col-sm-2">
+							<a href="" class="form-control"><span class="glyphicon glyphicon-folder-open"></a>
+						</div>
+						<div class="col-sm-8">
+							<input class="form-control" name="nome_empresa" id="disabledTextInput" disabled>
+						</div>
+
+					</div>
+				</div>
+
+				
+				
+				<input type="hidden" name="operacao" value="incluir">
+				<div class="form-group"><button class="btn btn-default">Salvar</button></div>
+		</form>
+
+	</div>
+
+ </section>

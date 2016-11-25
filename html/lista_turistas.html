@@ -1,0 +1,96 @@
+<section id="cadastro">
+
+	<div class="container">
+		
+
+		<div class="lista">
+
+			<h3 class="text-center title_pagina">Turistas Cadastrados</h3>
+
+			<div class="botaocadastro">
+				<a href="cadastropassageiro.php" class="btn btn-success">Incluir Novo</a>
+			</div>
+
+			<table class="table table-striped table-responsive table-hover">
+
+				<thead>
+					<tr>
+						<th class="titulo_lista">Nome</th>
+						<th class="titulo_lista">Dt Nasc.</th>
+						<th class="titulo_lista">Celular</th>
+						<th class="titulo_lista">Email</th>
+						<th class="titulo_lista">Ação</th>
+					</tr>
+
+				</thead>
+
+				<!-- INÍCIO - Recupera os Passageiros cadastrados para exibir na tela -->
+
+				<?php 
+
+					require_once("inc/turista.php");
+
+					$resultado = recuperarTuristas();
+
+					if (is_int($resultado)) {
+
+					} else {
+
+				?>
+
+				<!-- FIM - Recupera os Passageiros cadastrados para exibir na tela -->
+
+				<tbody>
+
+					<?php 
+
+						foreach ($resultado as $row) {
+
+							echo '<tr>';
+							// Nome
+							echo '<td class="item_lista">';
+							echo '<p class="item_lista">' .$row["nome_passageiro"] .'</p>';
+							echo '</td>';
+
+							// Data de Nascimento
+							echo '<td class="item_lista">';
+							echo '<p class="item_lista">' .date("d/m/Y", strtotime($row["data_nasc_passageiro"])) .'</p>';
+							echo '</td>';
+
+							// Celular
+							echo '<td class="item_lista">';
+							echo '<p class="item_lista">' .$row["tel_cel_passageiro"] .'</p>';
+							echo '</td>';
+
+							// Email
+							echo '<td>';
+							echo '<p class="item_lista">' .$row["email_passageiro"] .'</p>';
+							echo '</td>';
+
+							// Ação
+							echo '<td class="item_lista">';
+							echo '<a class="btn btn-primary" href="cadastropassageiro.php?id=' . $row["id_passageiro"] . '">Alterar Dados</a> ';
+							echo '<a class="btn btn-danger" href="cadastropassageiro.php?id=' . $row["id_passageiro"] . '&operacao=excluir">Remover</a>';
+							echo '</td>';
+
+							echo '</tr>';
+
+						}
+
+					?>
+
+				</tbody>
+
+				<?php 
+					}
+				?>
+
+			</table>
+		</div>
+	</div>
+
+	
+
+	
+
+ </section>
